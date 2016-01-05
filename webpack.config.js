@@ -14,7 +14,7 @@ var webpackConfig = module.exports = {
   output: {
     path: './public/js',
     filename: '[name].js',
-    publicPath: 'http://localhost:' + config.devPort + '/js/'
+    publicPath: 'http://' + config.host + ':' + config.devPort + '/js/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
@@ -64,7 +64,7 @@ var webpackConfig = module.exports = {
   },
   devServer: {
     port: config.devPort,
-    contentBase: 'http://localhost:' + config.port
+    contentBase: 'http://' + config.host + ':' + config.port
   }
 };
 
@@ -95,7 +95,7 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-  	new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')

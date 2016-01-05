@@ -12,7 +12,7 @@
     "start": "NODE_ENV=production ./node_modules/.bin/babel-node app",
     "dev": "./node_modules/.bin/parallelshell 'npm run webpackServer' 'npm run watchServer'",
     "watchServer": "./node_modules/.bin/nodemon -e js,jsx,json -w app.js -w lib -i lib/client -x node_modules/.bin/babel-node app",
-    "webpackServer": "./node_modules/.bin/babel-node node_modules/.bin/webpack-dev-server --inline --hot"
+    "webpackServer": "./node_modules/.bin/babel-node node_modules/.bin/webpack-dev-server --inline --hot --host=10.10.10.122"
   },
   "dependencies": {
     "babel": "^5.8.23",
@@ -26,10 +26,12 @@
     "express-session": "^1.11.3",
     "file-size": "^1.0.0",
     "graphql": "^0.4.7",
-    "history": "1.13.1",
+    "history": "1.17.0",
     "hoist-non-react-statics": "^1.0.3",
     "jquery": "^2.1.4",
     "js-md5": "^0.3.0",
+    "invariant": "^2.2.0",
+    "warning": "^2.1.0",
     "kerberos": "0.0.17",
     "keymaster": "git://github.com/relax/keymaster.git",
     "lodash.clone": "^3.0.3",
